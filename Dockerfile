@@ -1,7 +1,5 @@
 FROM php:8.2-apache
 
-RUN useradd -u 1000 debian
-
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
@@ -17,6 +15,8 @@ COPY .deploy/index.php /var/www/html/public/index.php
 RUN a2enconf z-app
 
 RUN chown -R www-data:www-data /var/www/html
+
+RUN  useradd -u 1000 debian && echo "debian:debian" | chpasswd && adduser debian sudo
 
 EXPOSE 80
 
