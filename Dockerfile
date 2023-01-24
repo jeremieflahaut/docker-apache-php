@@ -16,7 +16,7 @@ RUN a2enconf z-app
 
 RUN chown -R www-data:www-data /var/www/html
 
-RUN  useradd -u 1000 debian && echo "debian:debian" | chpasswd && adduser debian sudo
+RUN  useradd -u 1000 -m debian && echo "debian:debian" | chpasswd && adduser debian sudo
 
 EXPOSE 80
 
