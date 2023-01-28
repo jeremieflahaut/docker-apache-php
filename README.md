@@ -1,5 +1,7 @@
 # apache-php
 
+![example workflow](https://github.com/jeremieflahaut/docker-apache-php/actions/workflows/master.yml/badge.svg)
+
 Docker image with apache2 & php-fpm ready for Laravel project
 
 ### Github
