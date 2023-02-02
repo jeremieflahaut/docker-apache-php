@@ -25,6 +25,7 @@ cp .deploy/php/php.ini /usr/local/etc/php/conf.d/app.ini
 cp .deploy/apache2/vhost.conf /etc/apache2/sites-available/000-default.conf
 cp .deploy/apache2/apache.conf /etc/apache2/conf-available/z-app.conf
 a2enconf z-app
+a2enmod rewrite
 a2enmod proxy_fcgi
 
 #Install php-fpm
